@@ -1,0 +1,6 @@
+<%= simple_form_for @game do |f| %>
+<%= f.input :name, label:false, placeholder: "Name of your game" %>
+<%= f.input :description, label: false, placeholder: "Description" %>
+<%= f.input :price, label: false, placeholder: "Price in EUR" %>
+<%= f.button :submit, "Add your game", class: "btn-success" %>
+<% end %>
