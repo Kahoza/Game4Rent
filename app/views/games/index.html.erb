@@ -1,2 +1,9 @@
 <h1>All games will be shown here</h1>
 <h2>Style to be applied soon!!</h2>
+<p><%= @games.each do |game| %></p>
+<p><%= game.name %></p>
+<p><%=game.description%></p>
+<p><%= game.price %></p>
+
+
+<% end  %>
