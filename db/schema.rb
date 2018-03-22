@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20180322103707) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "owner_id"
+    t.bigint "user_id"
     t.bigint "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_bookings_on_game_id"
-    t.index ["owner_id"], name: "index_bookings_on_owner_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -29,13 +29,13 @@ ActiveRecord::Schema.define(version: 20180322103707) do
     t.text "description"
     t.integer "price"
     t.string "photo"
-    t.bigint "owner_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_games_on_owner_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
   end
 
-  create_table "owners", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -65,6 +65,6 @@ ActiveRecord::Schema.define(version: 20180322103707) do
   end
 
   add_foreign_key "bookings", "games"
-  add_foreign_key "bookings", "owners"
-  add_foreign_key "games", "owners"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "games", "users"
 end
