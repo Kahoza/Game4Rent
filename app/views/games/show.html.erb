@@ -1,8 +1,8 @@
-<h1><%= @game.name %></h1>
-<h2><%=@game.description%></h2>
-<p><%=@game.price%></p>
-<%=cl_image_tag @game.photo, height: 300, width: 400, crop: :fill %>
-<%= link_to edit_game_path(@game) do %>
+<div><h1><%= @game.name %></h1></div>
+<div><h2><%=@game.description%></h2></div>
+<div><p><%=@game.price%> EUR / day</p></div>
+<div><%=cl_image_tag @game.photo, height: 300, width: 400, crop: :fill %></div>
+<div><%= link_to edit_game_path(@game) do %>
 <%= icon("fal fa-edit") %><span>Edit</span>
 <% end %>
 <%= link_to game_path(@game), method: :delete do %>
@@ -11,3 +11,4 @@
 <%= link_to games_path do  %>
 <%= icon("fal fa-backward") %><span>Back to all games</span>
 <% end %>
+</div>
