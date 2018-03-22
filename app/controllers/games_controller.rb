@@ -46,7 +46,7 @@ def game_params
 end
 
 def set_game
-  @game = Game.fin(params[:id])
+  @game = Game.find(params[:id])
 end
 
 end
