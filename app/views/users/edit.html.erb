@@ -1,0 +1,7 @@
+<h2>Update your details</h2>
+<%= simple_form_for @user do |f| %>
+<%= f.input :first_name, label: false, placeholder: "First Name" %>
+<%= f.input :last_name, label: false, placeholder: "Last Name" %>
+<%= f.input :phone_number, label: false, placeholder: "Phone Number" %>
+<%= f.button :submit, "Update your details", class: "btn-success" %>
+<% end %>
