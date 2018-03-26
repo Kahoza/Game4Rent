@@ -15,6 +15,13 @@ end
 
 def show
   set_game
+  if @game.latitude && @game.longitude
+    @markers = [{
+      lat: @game.latitude,
+      lng: @game.longitude
+      }]
+   end
+    @markers = @markers.compact
 end
 
 def new
