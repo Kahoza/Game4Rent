@@ -1,29 +1,50 @@
 .show_page_wrapper {
-  color: $navy;
+  color: black;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   .wrapper_game_photo {
-    width: 100%;
+    width: 50%;
     background-size: cover;
     background-position: center center;
     height: 400px;
   }
   .wrapper_game {
-    p {
-      font-size: 1rem;
-      letter-spacing: 1px;
-    }
-    width: 60%;
+    // p {
+    //   font-size: 1rem;
+    //   letter-spacing: 1px;
+    // }
+    width: 80%;
     height: 50%;
     margin: 2rem auto;
-    display: grid;
-    grid-template-rows: repeat(auto-fill, minmax(3rem, 1fr));
-    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-    grid-row-gap: 2rem;
+
+
+display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+      "photo photo title price"
+      "photo photo description description"
+      "photo photo description description"
+      "photo photo price price"
+      "map map map map";
+
+  // display: grid;
+  // grid-template-columns: 50% 50%;
+  // grid-template-rows: 25% ;
+  // grid-gap: 1em;
+
+    // display: grid;
+    // grid-template-rows: repeat(auto-fill, minmax(4rem));
+    // grid-template-columns: repeat(auto-fill, minmax(50%));
+
+
+
+
     .wrapper_game_name {
+      display: grid;
       h1 {
         font-size: 32px;
       }
@@ -34,6 +55,7 @@
     }
 
     .wrapper_game_description {
+      // display: grid;
       h3 {
         font-size: 1.5rem;
       }
@@ -46,71 +68,17 @@
     }
   }
   .wrapper_game_price {
-    display: grid;
-    .wrapper_game_price_text {
-      display: none;
-    }
-  }
-
-  .main_info {
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 0;
-
-  }
-}
-}
-
-.description {
-  p {
+    // display: grid;
     font-size: 1rem;
-    line-height: 1.3;
-    margin: 0;
   }
-}
-.price {
-  p {
+  .wrapper_game_options {
+    // display: grid;
     font-size: 1rem;
-    margin: 0;
-  }
-}
-.date {
-  p {
-    font-size: 1rem;
-    margin: 0;
   }
 }
 
-.wrapper_info {
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
-  .contact_details {
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0;
-    }
-    i {
-      font-size:1rem;
-    }
-    p {
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-  }
 
-}
-.wrapper_review {
-  width: 60%;
-    // text-align: center;
-    padding: 2rem 0;
-    p {
-      font-size: 1rem;
-    }
-  }
-  .map_details {
+  .wrapper_game_map {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -124,4 +92,4 @@
     width: 100%;
     height: 50vh;
   }
-}
+

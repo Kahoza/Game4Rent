@@ -1,33 +1,36 @@
-<!-- <div><h1><%= @game.name %></h1></div>
-<div><h2><%=@game.description%></h2></div>
-<div><p><%=@game.price%> EUR / day</p></div>
-<div><%=cl_image_tag @game.photo, height: 300, width: 400, crop: :fill %></div>
-<div><%= link_to edit_game_path(@game) do %>
-<%= icon("fal fa-edit") %><span>Edit</span>
-<% end %>
-<%= link_to game_path(@game), method: :delete do %>
-<%= icon("fal fa-trash") %><span>Delete</span>
-<% end %>
-<%= link_to games_path do  %>
-<%= icon("fal fa-backward") %><span>Back to all games</span>
-<% end %>
+<div class="show_page_wrapper">
+ <divc class="wrapper_game">
+  <div class="wrapper_game_photo"><%=cl_image_tag @game.photo, height: 300, width: 400, crop: :fill %></div>
+  <div class="wrapper_game_name"><h1><%= @game.name %></h1></div>
+  <div class="wrapper_game_description"><h2><%=@game.description%></h2></div>
+  <div class="wrapper_game_price"><p><%=@game.price%> EUR / day</p></div>
+  <div class="wrapper_game_options"><%= link_to edit_game_path(@game) do %>
+    <%= icon("fal fa-edit") %><span>Edit</span>
+    <% end %>
+    <%= link_to game_path(@game), method: :delete do %>
+    <%= icon("fal fa-trash") %><span>Delete</span>
+    <% end %>
+    <%= link_to games_path do  %>
+    <%= icon("fal fa-backward") %><span>Back to all games</span>
+    <% end %>
+  </div>
 
-<div
+  <div
   id="map"
   style="width: 100%;
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
-></div>
+  ></div>
 </div>
+<!--   </div>
+ -</div>
 
--->
 
 
-
+<div class="wrapper_game">
 <div class="show_page_wrapper">
   <div class="wrapper_game_photo"><%=cl_image_tag @game.photo, height: 300, width: 400, crop: :fill %></div>
 
-<div class="wrapper_game">
 
   <div class="wrapper_game_name">
     <h1><%= @game.name %>  </h1>
@@ -37,10 +40,6 @@
  </div>
 </div>
 <div class="wrapper_game_price">
-  <div class="wrapper_game_price_text">
-    <p>Price</p>
-  </div>
-  <div class="main_info price">
     <p><%= @game.price %> EUR per day </p>
   </div>
 </div>
@@ -55,3 +54,4 @@ data-markers="<%= @markers.to_json %>"
 ></div>
 
 
+-->
