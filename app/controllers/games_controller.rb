@@ -4,7 +4,13 @@ class GamesController < ApplicationController
 
 
 def index
-  @games = Game.all
+  @games = Game.where.not(latitude: nil, longitude: nil)
+  @markers = @games.map do |game|
+    {
+      lat: game.latitude,
+      lng: game.longitude
+    }
+  end
 end
 
 def show
@@ -44,7 +50,7 @@ end
 private
 
 def game_params
-  params.require(:game).permit(:name, :description, :price, :photo)
+  params.require(:game).permit(:name, :description, :price, :address, :photo)
 end
 
 def set_game
