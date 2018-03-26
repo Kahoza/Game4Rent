@@ -1,10 +1,12 @@
-<h1>All games will be shown here</h1>
+ <h1>All games will be shown here</h1>
 <h2>Style to be applied soon!!</h2>
 <p><% @games.each do |game| %></p>
   <p><%= link_to game.name, game_path(game) %></p>
   <p><%=game.description%></p>
   <p><%=game.address%></p>
   <p><%= game.price %></p>
+  <%=cl_image_tag game.photo, height: 300, width: 400, crop: :fill %>
+
 <% end  %>
 
 <div
@@ -13,3 +15,39 @@
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
+
+<!--
+<% @games.each do |game| %>
+<%= link_to game_path(game) do %>
+
+<div class="index-search-result">
+  <div class="wrapper-index>
+    <div id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"</div>
+    <div class="result-image"><%=cl_image_tag game.photo, height: 300, width: 400, crop: :fill %></div>
+    <div class="result-name result-info">
+      <span><%= game.name.truncate(30) %></span>
+    </div>
+
+    <div class="result-description result-info">
+      <p><%= game.description.truncate(179)%></p>
+    </div>
+
+    <div class="result-address result-info">
+      <span class="fas fa-map-marker">
+      </span>
+      <span class="normal-text"><%= game.address %>
+      </span>
+    </div>
+
+    <div class="results-price">
+     <p><%= game.price %> EUR per day</p>
+   </div>
+ </div>
+</div>
+<% end %>
+<% end %>
+
+ -->

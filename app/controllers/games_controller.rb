@@ -4,16 +4,6 @@ class GamesController < ApplicationController
 
 
 def index
-
-  #   @games = @games.where(age_group: params[:age_group]) if params[:age_group].present? && params[:age_group] != ""
-  #   @games = @games.where("neighbourhood ILIKE ?", params[:neighbourhood]) unless params[:city].blank?
-  #   @games = @games.where.not(latitude: nil, longitude: nil) unless params[:address].blank?
-  #   p params
-
-
-
-
-
   @games = Game.where.not(latitude: nil, longitude: nil)
   @markers = @games.map do |game|
     {
@@ -21,18 +11,19 @@ def index
       lng: game.longitude
     }
   end
+
+  @games = @games.where("neighbourhood ILIKE ?", params[:neighbourhood])
+
+  @games = Game.select("games.*").where("category"=="params[:neighbourhood]")
+
+
+
+
+
 end
 
 def show
-  # set_game
-  @games = Game.select("games.*").where("category" == "game.neighbourhood")
- # @games = @games.where("neighbourhood ILIKE ?", params[:neighbourhood])
-
-  # @games = Game.select("games.*").where("category"=="params[:neighbourhood]")
-
-
-
-
+  set_game
 
   if @game.latitude && @game.longitude
     @markers = [{
