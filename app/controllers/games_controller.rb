@@ -57,7 +57,7 @@ end
 private
 
 def game_params
-  params.require(:game).permit(:name, :description, :price, :address, :photo)
+  params.require(:game).permit(:name, :description, :price, :address, :neighbourhood, :photo)
 end
 
 def set_game

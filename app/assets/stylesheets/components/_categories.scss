@@ -44,37 +44,47 @@
 }
 
 
-.category-sports {
+.category-Friedrichshain {
   background: asset-url("sports.jpg") center no-repeat;
   background-size: cover;
 }
 
-.category-cooking {
+.category-Kreuzberg {
   background: linear-gradient(rgba(73, 105, 120,0), rgba(73, 105, 120,0)), asset-url("cooking.jpg") center no-repeat;
   background-size: cover;
 }
 
-.category-animals {
+.category-Mitte {
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("animals.jpg") center no-repeat;
   background-size: cover;
 }
 
-.category-outdoor {
+.category-Neukölln {
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("outdoor.jpg") center no-repeat;
   background-size: cover;
 }
 
-.category-indoor {
+.category-Steglitz {
  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("indoor.jpg") center no-repeat;
   background-size: cover;
 }
 
-.category-game {
+.category-Schöneberg {
 background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("game.jpg") center no-repeat;
   background-size: cover;
 }
 
-.category-art {
+.category-Spandau {
+ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("art.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.category-PrenzlauerBerg {
+ background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("art.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.category-Pankow {
  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("art.jpg") center no-repeat;
   background-size: cover;
 }
