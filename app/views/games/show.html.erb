@@ -17,27 +17,22 @@
 
 </div>
 
-<div class="wrapper-book-event"></div>
-<h3>Available dates</h3>
+<div class="wrapper-book-event">
+<div class="wrapper-book-event-title">
+<h3>Available dates</h3></div>
 <% evts = @game.events.where( "start_date >= ? ", Date.today) %>
 <% evts.each do |event| %>
-<div class="wrapper_event">
   <!-- <div class="wrapper_event_dates">
    <div class="wrapper_event_dates_text">
     <p><%= event.start_date.strftime("%A %e %B ") do %></p>
   </div>
   <% end %>
 </div> -->
-
-<div class="wrapper_event_button">
- <div class="wrapper_event_button_text">
+ <div class="wrapper-book-event-date">
 <button type="button"><%= event.start_date.strftime("%A %e %B ") %></button>
 </div>
-
-</div>
-</div>
-</div>
 <% end %>
+</div>
 
 <div class="wrapper_game_address_map">
   <div class="wrapper_game_address">
@@ -50,6 +45,7 @@
   ></div>
 </div>
 
+</div>
 
 
 

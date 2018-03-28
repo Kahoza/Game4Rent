@@ -1,5 +1,6 @@
 .show_page_wrapper {
   color: black;
+  background: white;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -10,74 +11,49 @@
   width: 90%;
   height: 50%;
   margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 1fr 2fr 1fr;
 
-
-// display: grid;
-//       grid-template-columns: 50% 50%;
-//       grid-template-rows: 1fr;
-//       grid-template-areas:
-//       "photo photo title price"
-//       "photo photo description description"
-//       "photo photo description description"
-//       "photo photo price price"
-//       "map map map map";
-
-  // display: grid;
-  // grid-template-columns: 50% 50%;
-  // grid-template-rows: 25% ;
-  // grid-gap: 1em;
-
-    // display: grid;
-    // grid-template-rows: repeat(auto-fill, minmax(4rem));
-    // grid-template-columns: repeat(auto-fill, minmax(50%));
-
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 1fr 2fr 1fr;
-
-
-    .wrapper_game_photo {
-      grid-row: 1 / -1;
-      background-size: cover;
-      background-position: center center;
-      img {
-        height: 250px;
-        border-radius: 4px;
-        margin-bottom: 15px;
-      }
+  .wrapper_game_photo {
+    grid-row: 1 / -1;
+    background-size: cover;
+    background-position: center center;
+    img {
+      height: 250px;
+      border-radius: 4px;
+      margin-bottom: 15px;
     }
-    .wrapper_game_name {
-      grid-column: 2 / -1;
-      h1 {
-        font-size: 25px;
-        margin-top: 3px;
-      }
-      // i {
-      //   font-size:1rem;
-      // }
+  }
 
+  .wrapper_game_name {
+    grid-column: 2 / -1;
+    h1 {
+      font-size: 25px;
+      margin-top: 3px;
     }
-    .wrapper_game_description {
-      grid-column: 2 / -1;
-      grid-row: 2 / -1;
-      h2 {
-        font-size: 20px;
-        margin: 0;
-        line-height: 25px;
-      }
+  }
+  .wrapper_game_description {
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+    h2 {
+      font-size: 20px;
+      margin: 0;
+      line-height: 25px;
+    }
+  }
 
+  .wrapper_game_price {
+    grid-column: 2/ -1;
+    grid-row: 3/ -1;
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 25px;
     }
-    .wrapper_game_price {
-      grid-column: 2/ -1;
-      grid-row: 3/ -1;
-      p {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: 25px;
-      }
-    }
-    .wrapper_game_options {
-    // display: grid;
+  }
+
+  .wrapper_game_options {
     font-size: 20px;
     color: black;
     margin-left: -6px;
@@ -96,8 +72,37 @@
   }
 }
 
+.wrapper-book-event {
+  width: 90%;
+  height: 50%;
+  grid-auto-columns: 1fr 1fr ;
+  grid-auto-rows: 10%;
+  grid-gap: 6px;
+  margin-bottom: 15px;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 1fr;
+
+  .wrapper-book-event-title {
+    display: grid;
+    // grid-column: 1 / 2;
+    // grid-row: 1 / 2;
+  }
+  .wrapper-book-event-date {
+    display: grid;
+    width: 300px;
+    button {
+    border-radius: 4px;
+    &:hover {
+      background: gray;
+    }
+    }
 
 
+    // grid-column: 1 / -1;
+    // grid-row: 2 / -1;
+  }
+}
 .wrapper_game_address_map {
   width: 90%;
   height: 50%;
@@ -109,28 +114,23 @@
   .wrapper_game_address {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-  h3 {
-    word-wrap: break-word;
-    font-size: 20px;
+    h3 {
+      word-wrap: break-word;
+      font-size: 20px;
     }
   }
-.wrapper_game_map {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  // width: 100%;
-  // height: 50vh;
-}
-#map {
-  grid-column: 2 / -1;
-  grid-row: 1 / -1;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  // width: 50%;
-  // height: 250px;
-  border-radius: 4px;
-// }
 
-}
+  .wrapper_game_map {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  #map {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+  }
 }
