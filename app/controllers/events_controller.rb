@@ -12,6 +12,7 @@ class EventsController < ApplicationController
       redirect to game_path(@event.game)
     else
       render :new
+    end
   end
 
   def show
