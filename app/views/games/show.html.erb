@@ -14,27 +14,24 @@
     <%= icon("fal fa-backward") %><span>Back</span>
     <% end %>
   </div>
+
 </div>
 
-
+<div class="wrapper-book-event"></div>
+<h3>Available dates</h3>
 <% evts = @game.events.where( "start_date >= ? ", Date.today) %>
 <% evts.each do |event| %>
 <div class="wrapper_event">
-    <h3>Available dates</h3>
-  <div class="wrapper_event_dates">
+  <!-- <div class="wrapper_event_dates">
    <div class="wrapper_event_dates_text">
     <p><%= event.start_date.strftime("%A %e %B ") do %></p>
   </div>
   <% end %>
+</div> -->
 
-
-</div>
-<div class="wrapper_event_price">
-    <p><%= @game.price %>EUR per day</p>
-</div>
 <div class="wrapper_event_button">
  <div class="wrapper_event_button_text">
-  <p>Book</p>
+<button type="button"><%= event.start_date.strftime("%A %e %B ") %></button>
 </div>
 
 </div>
