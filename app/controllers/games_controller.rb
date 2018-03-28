@@ -4,6 +4,8 @@ class GamesController < ApplicationController
 
 
 def index
+  @games = Game.select("games.*").joins(:events).where("events.start_date >= ?", Date.today).distinct
+
   @games = Game.where.not(latitude: nil, longitude: nil)
   @markers = @games.map do |game|
     {
@@ -16,14 +18,11 @@ def index
 
   @games = Game.select("games.*").where("category"=="params[:neighbourhood]")
 
-
-
-
-
 end
 
 def show
   set_game
+  @events = @game.events
 
   if @game.latitude && @game.longitude
     @markers = [{

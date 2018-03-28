@@ -9,7 +9,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.game = Game.find(params[:game_id])
     if @event.save
-      redirect to game_path(@event.game)
+      redirect_to game_path(@event.game)
     else
       render :new
     end
@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @event.game = Game.find(params[:game_id])
   end
 
   private
