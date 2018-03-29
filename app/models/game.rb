@@ -4,6 +4,7 @@ class Game < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   belongs_to :user
   has_many :events, dependent: :destroy
+  monetize :price_cents
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true
