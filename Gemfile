@@ -20,6 +20,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
 gem 'stripe'
+gem 'money-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
