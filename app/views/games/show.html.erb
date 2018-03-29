@@ -3,7 +3,7 @@
   <div class="wrapper_game_photo"><%=cl_image_tag @game.photo %></div>
   <div class="wrapper_game_name"><h1><%= @game.name %></h1></div>
   <div class="wrapper_game_description"><h2><%=@game.description.truncate(469)%></h2></div>
-  <div class="wrapper_game_price"><p><%=@game.price%> EUR / day</p></div>
+  <div class="wrapper_game_price"><p>Amount per day: <%= humanized_money_with_symbol(@game.price)%></p></div>
   <div class="wrapper_game_options"><%= link_to edit_game_path(@game) do %>
     <%= icon("fal fa-edit") %><span>Edit</span>
     <% end %>
