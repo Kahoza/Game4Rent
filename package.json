@@ -5,7 +5,7 @@
     "@rails/webpacker": "^3.3.1",
     "bootstrap": "3",
     "gmaps": "^0.4.24",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "npm": "^5.8.0",
     "typed.js": "^2.0.6"
   },
